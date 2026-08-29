@@ -1,0 +1,38 @@
+{
+  "entities": {
+    "User": {
+      "collection": "users",
+      "fields": {
+        "email": { "type": "string", "required": true },
+        "displayName": { "type": "string", "required": false },
+        "createdAt": { "type": "string", "required": true }
+      }
+    },
+    "JournalEntry": {
+      "collection": "users/{userId}/entries",
+      "fields": {
+        "title": { "type": "string", "required": true },
+        "summary": { "type": "string", "required": false },
+        "keyTakeaways": { "type": "array", "required": false },
+        "mood": { "type": "string", "required": false },
+        "tags": { "type": "array", "required": false },
+        "messages": { "type": "array", "required": true },
+        "createdAt": { "type": "string", "required": true },
+        "updatedAt": { "type": "string", "required": true }
+      }
+    },
+    "JournalInsight": {
+      "collection": "users/{userId}/insights",
+      "fields": {
+        "period": { "type": "string", "required": true },
+        "summary": { "type": "string", "required": true },
+        "weeklyThemes": { "type": "array", "required": true },
+        "recurringTopics": { "type": "array", "required": true },
+        "emotionalTrends": { "type": "string", "required": false },
+        "growthPrompts": { "type": "array", "required": true },
+        "analyzedEntriesCount": { "type": "number", "required": true },
+        "createdAt": { "type": "string", "required": true }
+      }
+    }
+  }
+}
